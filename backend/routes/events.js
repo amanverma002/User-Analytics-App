@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Event = require('../models/Event');
 
-// ─────────────────────────────────────────────
-// GET /api — API Info & Available Endpoints
-// ─────────────────────────────────────────────
 router.get('/', (req, res) => {
   res.json({
     name: 'CausalFunnel Analytics API',
@@ -20,29 +17,20 @@ router.get('/', (req, res) => {
     },
   });
 });
-
-// ─────────────────────────────────────────────
-// POST /api/events — Receive and store events
-// ─────────────────────────────────────────────
 router.post('/events', async (req, res) => {
   try {
     const { session_id, event_type, page_url, timestamp, click_x, click_y, viewport_width, viewport_height, element_tag, element_text } = req.body;
 
-    // Validate required fields
     if (!session_id || !event_type || !page_url) {
       return res.status(400).json({
         error: 'Missing required fields: session_id, event_type, page_url',
       });
     }
-
-    // Validate event type
     if (!['page_view', 'click'].includes(event_type)) {
       return res.status(400).json({
         error: 'Invalid event_type. Must be "page_view" or "click".',
       });
     }
-
-    // Click events must have coordinates
     if (event_type === 'click' && (click_x == null || click_y == null)) {
       return res.status(400).json({
         error: 'Click events require click_x and click_y coordinates.',
@@ -63,17 +51,12 @@ router.post('/events', async (req, res) => {
     });
 
     await event.save();
-
     res.status(201).json({ success: true, event_id: event._id });
   } catch (err) {
     console.error('Error saving event:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-// ─────────────────────────────────────────────────────────
-// POST /api/events/batch — Receive and store batch events
-// ─────────────────────────────────────────────────────────
 router.post('/events/batch', async (req, res) => {
   try {
     const { events } = req.body;
@@ -103,10 +86,6 @@ router.post('/events/batch', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-// ─────────────────────────────────────────────────────────────
-// GET /api/sessions — Fetch all sessions with event counts
-// ─────────────────────────────────────────────────────────────
 router.get('/sessions', async (req, res) => {
   try {
     const sessions = await Event.aggregate([
@@ -149,10 +128,6 @@ router.get('/sessions', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-// ──────────────────────────────────────────────────────────────────
-// GET /api/sessions/:sessionId/events — Fetch events for a session
-// ──────────────────────────────────────────────────────────────────
 router.get('/sessions/:sessionId/events', async (req, res) => {
   try {
     const { sessionId } = req.params;
@@ -175,10 +150,6 @@ router.get('/sessions/:sessionId/events', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-// ─────────────────────────────────────────────────────
-// GET /api/heatmap?page=URL — Fetch click data for heatmap
-// ─────────────────────────────────────────────────────
 router.get('/heatmap', async (req, res) => {
   try {
     const { page } = req.query;
@@ -205,10 +176,6 @@ router.get('/heatmap', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
-// ────────────────────────────────────────────────────
-// GET /api/pages — Get distinct page URLs with counts
-// ────────────────────────────────────────────────────
 router.get('/pages', async (req, res) => {
   try {
     const pages = await Event.aggregate([
@@ -242,5 +209,4 @@ router.get('/pages', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
-
 module.exports = router;
