@@ -1,4 +1,4 @@
-# 📊 CausalFunnel — User Analytics Application
+Simple User Analytics Application
 
 A full-stack user analytics application that tracks user interactions on a webpage and displays them in a beautiful, real-time dashboard.
 
