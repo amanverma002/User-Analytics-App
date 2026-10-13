@@ -41,7 +41,6 @@
       overflow-x: hidden;
     }
 
-    /* ─── NAVBAR ─────────────────────────────── */
     .navbar {
       position: sticky;
       top: 0;
@@ -171,7 +170,6 @@
       color: white;
     }
 
-    /* ─── HERO ───────────────────────────────── */
     .hero {
       padding: 100px 40px 80px;
       text-align: center;
@@ -269,7 +267,6 @@
       color: var(--accent-light);
     }
 
-    /* ─── STATS BAR ──────────────────────────── */
     .stats-bar {
       display: flex;
       justify-content: center;
@@ -304,7 +301,6 @@
       letter-spacing: 1px;
     }
 
-    /* ─── PRODUCT GRID ───────────────────────── */
     .section {
       padding: 80px 40px;
     }
@@ -474,7 +470,6 @@
       box-shadow: 0 4px 15px var(--accent-glow);
     }
 
-    /* ─── CATEGORIES ─────────────────────────── */
     .category-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -514,7 +509,6 @@
       margin-top: 4px;
     }
 
-    /* ─── BANNER ──────────────────────────────── */
     .promo-banner {
       margin: 0 40px;
       padding: 60px 50px;
@@ -563,7 +557,6 @@
       z-index: 1;
     }
 
-    /* ─── NEWSLETTER ─────────────────────────── */
     .newsletter {
       text-align: center;
       padding: 80px 40px;
@@ -608,7 +601,6 @@
       color: var(--text-muted);
     }
 
-    /* ─── FOOTER ──────────────────────────────── */
     .footer {
       padding: 60px 40px 30px;
       border-top: 1px solid var(--border);
@@ -660,7 +652,6 @@
       color: var(--text-muted);
     }
 
-    /* ─── TOAST NOTIFICATION ─────────────────── */
     .toast {
       position: fixed;
       bottom: 30px;
@@ -685,7 +676,6 @@
       opacity: 1;
     }
 
-    /* ─── TRACKER INFO BAR ───────────────────── */
     .tracker-info {
       position: fixed;
       bottom: 0;
@@ -724,7 +714,6 @@
       font-size: 12px;
     }
 
-    /* ─── RESPONSIVE ─────────────────────────── */
     @media (max-width: 768px) {
       .navbar { padding: 12px 20px; }
       .nav-links { display: none; }
@@ -737,10 +726,9 @@
   </style>
 </head>
 <body>
-  <!-- ─── NAVBAR ────────────────────────────── -->
   <nav class="navbar">
     <div class="navbar-brand">
-      <div class="logo">⚡</div>
+      <div class="logo"> </div>
       ShopWave
     </div>
     <ul class="nav-links">
@@ -750,14 +738,13 @@
       <li><a href="#newsletter" id="nav-newsletter">Newsletter</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="nav-btn secondary" id="btn-search">🔍 Search</button>
-      <button class="nav-btn primary cart-badge" id="btn-cart">🛒 Cart</button>
+      <button class="nav-btn secondary" id="btn-search">Search</button>
+      <button class="nav-btn primary cart-badge" id="btn-cart">Cart</button>
     </div>
   </nav>
 
-  <!-- ─── HERO ──────────────────────────────── -->
   <section class="hero">
-    <div class="hero-badge">✨ New Collection 2026</div>
+    <div class="hero-badge">New Collection 2026</div>
     <h1>Discover Premium<br/>Tech & Lifestyle</h1>
     <p>Explore our curated collection of cutting-edge products designed to elevate your everyday experience.</p>
     <div class="hero-buttons">
@@ -766,7 +753,6 @@
     </div>
   </section>
 
-  <!-- ─── STATS BAR ─────────────────────────── -->
   <div class="stats-bar">
     <div class="stat">
       <div class="stat-value">12K+</div>
@@ -786,7 +772,6 @@
     </div>
   </div>
 
-  <!-- ─── PRODUCTS ───────────────────────────── -->
   <section class="section" id="products">
     <div class="section-header">
       <div>
@@ -796,11 +781,11 @@
       <a href="#" class="see-all" id="link-see-all">See All →</a>
     </div>
     <div class="product-grid">
-      <!-- Product 1 -->
+      
       <div class="product-card" id="product-1">
         <div class="product-image">
           <span class="product-tag tag-new">New</span>
-          🎧
+          
         </div>
         <div class="product-info">
           <div class="product-category">Audio</div>
@@ -815,11 +800,11 @@
           </div>
         </div>
       </div>
-      <!-- Product 2 -->
+      
       <div class="product-card" id="product-2">
         <div class="product-image">
           <span class="product-tag tag-hot">Hot</span>
-          ⌚
+          
         </div>
         <div class="product-info">
           <div class="product-category">Wearables</div>
@@ -834,12 +819,12 @@
           </div>
         </div>
       </div>
-      <!-- Product 3 -->
+      
       <div class="product-card" id="product-3">
         <div class="product-image">
-          <span class="product-tag tag-sale">-30%</span>
-          💻
+          <span class="product-tag tag-sale">-30%</span>          
         </div>
+
         <div class="product-info">
           <div class="product-category">Laptops</div>
           <div class="product-name">MacBook Pro M4</div>
@@ -853,11 +838,11 @@
           </div>
         </div>
       </div>
-      <!-- Product 4 -->
+      
       <div class="product-card" id="product-4">
         <div class="product-image">
-          📱
         </div>
+
         <div class="product-info">
           <div class="product-category">Phones</div>
           <div class="product-name">Pixel 10 Pro</div>
@@ -873,7 +858,6 @@
     </div>
   </section>
 
-  <!-- ─── CATEGORIES ─────────────────────────── -->
   <section class="section" id="categories">
     <div class="section-header">
       <div>
@@ -883,49 +867,47 @@
     </div>
     <div class="category-grid">
       <div class="category-card" id="cat-audio">
-        <div class="category-icon">🎵</div>
+        <div class="category-icon"></div>
         <div class="category-name">Audio</div>
         <div class="category-count">234 products</div>
       </div>
       <div class="category-card" id="cat-wearables">
-        <div class="category-icon">⌚</div>
+        <div class="category-icon"></div>
         <div class="category-name">Wearables</div>
         <div class="category-count">156 products</div>
       </div>
       <div class="category-card" id="cat-laptops">
-        <div class="category-icon">💻</div>
+        <div class="category-icon"></div>
         <div class="category-name">Laptops</div>
         <div class="category-count">89 products</div>
       </div>
       <div class="category-card" id="cat-phones">
-        <div class="category-icon">📱</div>
+        <div class="category-icon"></div>
         <div class="category-name">Phones</div>
         <div class="category-count">312 products</div>
       </div>
       <div class="category-card" id="cat-gaming">
-        <div class="category-icon">🎮</div>
+        <div class="category-icon"></div>
         <div class="category-name">Gaming</div>
         <div class="category-count">198 products</div>
       </div>
       <div class="category-card" id="cat-accessories">
-        <div class="category-icon">🎒</div>
+        <div class="category-icon"></div>
         <div class="category-name">Accessories</div>
         <div class="category-count">445 products</div>
       </div>
     </div>
   </section>
 
-  <!-- ─── PROMO BANNER ───────────────────────── -->
   <div class="promo-banner" id="deals">
     <div class="promo-content">
       <h2>Flash Sale! Up to 60% Off</h2>
       <p>Limited time offer on selected premium products. Don't miss out!</p>
       <button class="btn btn-primary" id="btn-flash-sale">Shop the Sale →</button>
     </div>
-    <div class="promo-visual">🔥</div>
+    <div class="promo-visual"> </div>
   </div>
 
-  <!-- ─── NEWSLETTER ──────────────────────────── -->
   <section class="newsletter" id="newsletter">
     <h2>Stay in the Loop</h2>
     <p>Get exclusive deals and early access to new products.</p>
@@ -935,12 +917,11 @@
     </form>
   </section>
 
-  <!-- ─── FOOTER ──────────────────────────────── -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="navbar-brand">
-          <div class="logo">⚡</div>
+          <div class="logo"></div>
           ShopWave
         </div>
         <p>Curating the finest tech and lifestyle products since 2020. Your one-stop destination for premium electronics.</p>
@@ -973,10 +954,7 @@
     </div>
   </footer>
 
-  <!-- ─── TOAST ──────────────────────────────── -->
   <div class="toast" id="toast">✓ Added to cart!</div>
-
-  <!-- ─── TRACKER INFO BAR ───────────────────── -->
   <div class="tracker-info">
     <div class="pulse"></div>
     <span>Tracking Active</span>
@@ -984,17 +962,12 @@
     <span>Session: <code id="session-display">loading...</code></span>
   </div>
 
-  <!-- ─── TRACKING SCRIPT ────────────────────── -->
   <script src="http://localhost:5000/tracking/tracker.js" data-api="http://localhost:5000/api/events"></script>
-
   <script>
-    // Display session ID
     setTimeout(() => {
       const sid = window.__cfTracker ? window.__cfTracker.sessionId : 'N/A';
       document.getElementById('session-display').textContent = sid.substring(0, 20) + '…';
     }, 500);
-
-    // Add to cart toast
     document.querySelectorAll('.add-to-cart').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -1003,8 +976,6 @@
         setTimeout(() => toast.classList.remove('show'), 2500);
       });
     });
-
-    // Newsletter form
     document.getElementById('newsletter-form').addEventListener('submit', (e) => {
       e.preventDefault();
       const toast = document.getElementById('toast');
