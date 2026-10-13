@@ -20,7 +20,6 @@ const eventSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
-  // Click-specific data
   click_x: {
     type: Number,
     default: null,
@@ -29,7 +28,6 @@ const eventSchema = new mongoose.Schema({
     type: Number,
     default: null,
   },
-  // Viewport dimensions at time of click (for heatmap normalization)
   viewport_width: {
     type: Number,
     default: null,
@@ -38,7 +36,6 @@ const eventSchema = new mongoose.Schema({
     type: Number,
     default: null,
   },
-  // Additional metadata
   element_tag: {
     type: String,
     default: null,
@@ -48,12 +45,8 @@ const eventSchema = new mongoose.Schema({
     default: null,
   },
 }, {
-  timestamps: true, // adds createdAt and updatedAt
+  timestamps: true, 
 });
-
-// Compound index for efficient session queries
 eventSchema.index({ session_id: 1, timestamp: 1 });
-// Index for heatmap queries by page
 eventSchema.index({ page_url: 1, event_type: 1 });
-
 module.exports = mongoose.model('Event', eventSchema);
