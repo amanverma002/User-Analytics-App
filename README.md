@@ -5,7 +5,6 @@ A full-stack user analytics application that tracks user interactions on a webpa
 ![Tech Stack](https://img.shields.io/badge/Node.js-Express-339933?style=flat&logo=node.js)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?style=flat&logo=mongodb)
 ![Next.js](https://img.shields.io/badge/Next.js-React-000000?style=flat&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript)
 
 ---
 
@@ -60,7 +59,7 @@ A full-stack user analytics application that tracks user interactions on a webpa
 | **Tracking SDK** | Vanilla JavaScript | Lightweight client-side event capture |
 | **Backend API** | Node.js + Express | RESTful API for event ingestion & queries |
 | **Database** | MongoDB + Mongoose | Document storage with indexing |
-| **Dashboard** | Next.js 15 + TypeScript | Interactive analytics UI |
+| **Dashboard** | Next.js 15 | Interactive analytics UI |
 | **Styling** | Vanilla CSS | Custom dark-themed design system |
 
 ## Prerequisites
