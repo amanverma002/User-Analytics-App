@@ -9,7 +9,7 @@ A full-stack user analytics application that tracks user interactions on a webpa
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -53,7 +53,7 @@ A full-stack user analytics application that tracks user interactions on a webpa
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## 🚀 Tech Stack
+## Tech Stack
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
@@ -63,13 +63,13 @@ A full-stack user analytics application that tracks user interactions on a webpa
 | **Dashboard** | Next.js 15 + TypeScript | Interactive analytics UI |
 | **Styling** | Vanilla CSS | Custom dark-themed design system |
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **Node.js** >= 18.x
 - **MongoDB** >= 6.x (running locally on port 27017)
 - **npm** >= 9.x
 
-## 🛠️ Setup Steps
+## Setup Steps
 
 ### 1. Clone the Repository
 
@@ -83,13 +83,10 @@ cd user-analytics-app
 Make sure MongoDB is running locally:
 
 ```bash
-# If using mongod directly
 mongod --dbpath /path/to/data
 
-# If using MongoDB as a service (Windows)
 net start MongoDB
 
-# If using Docker
 docker run -d -p 27017:27017 --name mongodb mongo:latest
 ```
 
@@ -119,7 +116,7 @@ Visit `http://localhost:5000/tracking/demo.html` in your browser.
 
 Click around the page to generate tracking events, then visit the dashboard to see the data!
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── backend/
@@ -156,7 +153,7 @@ Click around the page to generate tracking events, then visit the dashboard to s
 └── README.md
 ```
 
-## 🔌 API Reference
+## API Reference
 
 ### `POST /api/events`
 Receive and store a single event.
@@ -192,7 +189,7 @@ Returns all click events for a specific page URL (for heatmap visualization).
 ### `GET /api/pages`
 Returns distinct page URLs with event counts.
 
-## 🎯 Features
+## Features
 
 ### Tracking SDK (`tracker.js`)
 - **Automatic page_view tracking** on page load and SPA navigation
@@ -208,7 +205,7 @@ Returns distinct page URLs with event counts.
 - **Session Detail** — Visual timeline showing the complete user journey
 - **Heatmap View** — Select a page and see click density visualization with hover tooltips
 
-## 🧩 Design Decisions & Trade-offs
+## Design Decisions & Trade-offs
 
 | Decision | Rationale |
 |----------|-----------|
@@ -221,7 +218,7 @@ Returns distinct page URLs with event counts.
 | **Vanilla CSS** | Full control over design without framework overhead; custom dark theme |
 | **No authentication** | Simplified for demo purposes; would add JWT/session auth in production |
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - [ ] Add WebSocket for real-time dashboard updates
 - [ ] Scroll depth tracking
@@ -232,6 +229,6 @@ Returns distinct page URLs with event counts.
 - [ ] Redis caching for aggregated queries
 - [ ] Docker Compose for one-command setup
 
-## 📄 License
+## License
 
 MIT
